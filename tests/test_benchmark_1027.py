@@ -1,1 +1,8 @@
-import unittest\n\nclass CompositeCursorSeedTests(unittest.TestCase):\n    def test_cursor_keeps_region_and_sequence(self):\n        self.assertEqual(("sa-east-1", 42), ("sa-east-1", 42))\n\nif __name__ == "__main__":\n    unittest.main()\n
+import unittest
+
+class CompositeCursorSeedTests(unittest.TestCase):
+    def test_cursor_keeps_region_and_sequence(self):
+        self.assertEqual(("sa-east-1", 42), ("sa-east-1", 42))
+
+if __name__ == "__main__":
+    unittest.main()
