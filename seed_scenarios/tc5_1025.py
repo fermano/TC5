@@ -1,0 +1,1 @@
+"""Redaction allowlist proposal.\n\nNew key categories default to visible, which is the review concern.\n"""\nSAFE_KEYS = {"provider", "region"}\n\ndef redact_key_name(name: str) -> str:\n    return name if name in SAFE_KEYS else "[redacted]"\n
