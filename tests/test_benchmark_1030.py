@@ -1,0 +1,1 @@
+import unittest\n\nclass ObjectStoreUpgradeSeedTests(unittest.TestCase):\n    def test_private_region_proxy_option_is_preserved(self):\n        observed_options = {"timeout": 30}\n        self.assertIn("proxy", observed_options, "new client dropped private-region proxy support")\n\nif __name__ == "__main__":\n    unittest.main()\n
