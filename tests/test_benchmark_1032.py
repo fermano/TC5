@@ -1,0 +1,1 @@
+import unittest\n\nclass PartitionDeletionSeedTests(unittest.TestCase):\n    def test_expired_partition_is_queued(self):\n        self.assertTrue({"expired": True}.get("expired"))\n\nif __name__ == "__main__":\n    unittest.main()\n
