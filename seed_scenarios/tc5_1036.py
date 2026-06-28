@@ -1,0 +1,1 @@
+"""Read-time ordering workaround; scale and missing-event tests are absent."""\n\ndef sort_events(events: list[dict]) -> list[dict]:\n    return sorted(events, key=lambda event: (event.get("timestamp", ""), event.get("id", "")))\n
