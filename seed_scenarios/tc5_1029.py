@@ -1,0 +1,1 @@
+"""Non-production prototype for a columnar audit archive."""\n\ndef estimated_ratio(rows: int) -> float:\n    return 0.0 if rows == 0 else 0.42\n
