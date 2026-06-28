@@ -1,0 +1,1 @@
+import unittest\n\nclass HybridClockSeedTests(unittest.TestCase):\n    def test_clock_regression_keeps_total_order(self):\n        emitted = [1002, 998]\n        self.assertEqual(emitted, sorted(emitted), "clock regression reverses audit order")\n\nif __name__ == "__main__":\n    unittest.main()\n
