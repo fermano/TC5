@@ -18,6 +18,11 @@ class ReviewWindowTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             is_review_stale(self.now, self.now, stale_after_days=-1)
 
+    def test_mixed_timezone_awareness_is_rejected(self):
+        naive_updated_at = datetime(2026, 7, 1)
+        with self.assertRaises(ValueError):
+            is_review_stale(naive_updated_at, self.now)
+
 
 if __name__ == "__main__":
     unittest.main()
