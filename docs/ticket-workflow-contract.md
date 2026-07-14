@@ -2,6 +2,6 @@
 
 Delivery owner keys are lowercased after trimming and collapsing each run of whitespace to one ASCII space. Blank owners use `engineering-ops`.
 
-Future record filters must preserve the input record order. A missing owner selection means no filtering. The product meaning of an explicitly empty selection is not yet recorded here.
+Owner filters preserve input record order and use the same normalized keys as delivery routing. A missing owner selection means no filtering; an explicitly empty selection returns no records.
 
 Delivery summaries expose owner and status. Source metadata may be added as an opt-in field; behavior for blank or missing source values is not yet recorded here.
