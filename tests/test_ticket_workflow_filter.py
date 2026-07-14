@@ -17,6 +17,13 @@ class DeliveryRecordFilterTests(unittest.TestCase):
 
         self.assertEqual(filter_delivery_records(records, []), [])
 
+    def test_empty_owner_selection_does_not_consume_record_iterator(self):
+        def records():
+            raise AssertionError("records iterator must not be consumed")
+            yield {"owner": "billing", "status": "queued"}
+
+        self.assertEqual(filter_delivery_records(records(), []), [])
+
     def test_matching_uses_canonical_owner_names_and_keeps_input_order(self):
         records = [
             {"owner": " Billing ", "status": "first"},

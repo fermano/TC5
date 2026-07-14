@@ -19,6 +19,9 @@ def filter_delivery_records(
         return list(records)
 
     selected_owners = {normalize_delivery_owner(owner) for owner in owners}
+    if not selected_owners:
+        return []
+
     return [
         record
         for record in records
