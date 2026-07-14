@@ -1,6 +1,6 @@
 # Delivery workflow contract
 
-Delivery owner keys are trimmed and lowercased. Blank owners use `engineering-ops`.
+Delivery owner keys are lowercased after trimming and collapsing each run of whitespace to one ASCII space. Blank owners use `engineering-ops`.
 
 Owner filters preserve input record order and use the same normalized keys as delivery routing. A missing owner selection means no filtering; an explicitly empty selection returns no records.
 
