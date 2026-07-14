@@ -4,4 +4,4 @@ Delivery owner keys are lowercased after trimming and collapsing each run of whi
 
 Owner filters preserve input record order and use the same normalized keys as delivery routing. A missing owner selection means no filtering; an explicitly empty selection returns no records.
 
-Delivery summaries expose owner and status. Source metadata may be added as an opt-in field; behavior for blank or missing source values is not yet recorded here.
+Delivery summaries expose only owner and status by default. With `include_source=True`, summaries also expose a trimmed `source`; blank or missing sources are represented as `unknown`.
