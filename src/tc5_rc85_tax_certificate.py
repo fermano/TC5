@@ -1,5 +1,7 @@
 """RC85 tax certificate export helper."""
 
+ARTIFACT_SCHEMA = "rc85.tax.v2"
+
 
 def build_tax_certificate_row(payload, defaults=None):
     defaults = {"taxable_cents": 100, **(defaults or {})}
@@ -15,4 +17,6 @@ def build_tax_certificate_row(payload, defaults=None):
         "certificate_id": certificate_id,
         "status": status,
         "source": "rc85-route-tax",
+        "artifact_schema": ARTIFACT_SCHEMA,
+        "tax_key": f"{route_id}:{payload['invoice_id']}:{status}",
     }

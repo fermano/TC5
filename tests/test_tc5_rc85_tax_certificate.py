@@ -1,4 +1,4 @@
-from src.tc5_rc85_tax_certificate import build_tax_certificate_row
+from src.tc5_rc85_tax_certificate import ARTIFACT_SCHEMA, build_tax_certificate_row
 
 
 def test_certificate_export_uses_route_shape():
@@ -12,6 +12,8 @@ def test_certificate_export_uses_route_shape():
     assert row["route_id"] == "retail"
     assert row["status"] == "exempt"
     assert row["source"] == "rc85-route-tax"
+    assert row["artifact_schema"] == ARTIFACT_SCHEMA
+    assert row["tax_key"] == "retail:inv-502:exempt"
 
 
 def test_missing_certificate_is_taxable():
