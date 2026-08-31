@@ -20,3 +20,14 @@ def test_positive_snake_waiver_with_certificate_is_exempt():
 
     assert row["taxable"] is False
     assert row["waived_cents"] == 25
+
+
+def test_snake_zero_waiver_keeps_certificate_fields():
+    row = build_certificate_row(
+        {"tenant": "ember", "invoice_id": "inv-504", "certificate_id": "cert-78", "waived_cents": "0"},
+        {"ledger": "retail", "waived_cents": 0, "ledger_key": "em-a"},
+    )
+
+    assert row["certificate_id"] == "cert-78"
+    assert row["waived_cents"] == 0
+    assert row["ledger_key"] == "em-a"
