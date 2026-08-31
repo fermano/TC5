@@ -12,4 +12,5 @@ def build_certificate_row(payload, ledger_defaults):
         "taxable": taxable,
         "artifact_stage": ledger_defaults.get("artifact_stage", "rc105"),
         "ledger_key": ledger_defaults.get("ledger_key", "unset"),
+        "release_channel": ledger_defaults.get("release_channel", "candidate"),
     }
